@@ -41,16 +41,4 @@ describe Job do
       is_expected.to eq 1
     end
   end
-
-  describe '#average_count' do
-    before do
-      Job.create(started_on: '2014-01-01', ended_on: '2014-03-01')
-      Job.create(started_on: '2014-02-10', ended_on: '2014-03-01')
-    end
-    subject { described_class.average_count('2014-02-01', '2014-02-15') }
-
-    it 'returns average number of jobs during the period' do
-      is_expected.to eq 1.5
-    end
-  end
 end

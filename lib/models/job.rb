@@ -18,10 +18,4 @@ class Job < ActiveRecord::Base
   def self.ended_count(begin_date, end_date)
     active_in(begin_date).ended_in(begin_date, end_date).count
   end
-
-  def self.average_count(begin_date, end_date)
-    begin_count = active_count(begin_date)
-    end_count   = active_count(end_date)
-    (begin_count + end_count).to_f / 2
-  end
 end
